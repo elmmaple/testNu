@@ -6,114 +6,108 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
-	¡@document.write("²Ä¤G~¤­ÃD¬°¨Ï¥Îjavascript<br>¥kÁäÀËµøºô­¶­ì©l½X<br><br><br>");
+	document.write("ç¬¬äºŒ~äº”é¡Œç‚ºä½¿ç”¨javascript<br>å³éµæª¢è¦–ç¶²é åŸå§‹ç¢¼<br><br><br>");
 	//2-1
-	var str="¤H©ö¬ì§Ş:¤W ¾÷ ´ú Åç - ºtºâªk"
-	document.write("2-1<br>"+str.replace(/[:]/g, "¡G")+'<br>');
+	var str="äººæ˜“ç§‘æŠ€:ä¸Š æ©Ÿ æ¸¬ é©— - æ¼”ç®—æ³•"
+	document.write("2-1<br>"+str.replace(/[:]/g, "ï¼š")+'<br>');
 	//2-2	
 	while(str.search(/([\u4e00-\u9fa5])\s([\u4e00-\u9fa5])/g) > 0){
 		str=str.replace(/([\u4e00-\u9fa5])\s([\u4e00-\u9fa5])/g,"$1$2");
 	}
 	document.write("2-2<br>"+str+'<br>');	
-	//2-3
+//2-3
 	document.write("2-3<br>"+str.substr(0,str.indexOf("-"))+'<br>');
 
-	
-	   //3-1
-	   var arr=[0,1,2,3,4,5,6,7,8,9];
-	   var odd=0;
-	   var even=0;
-	   for(var i=0;i<arr.length;i++){
-		   if(arr[i]%2==0){
-			   even+=arr[i];
-		   }else{
-			   odd+=arr[i];
-		   }
-	   }
-	   document.write("3-1<br>©_¼Æ©M="+odd+"<br>°¸¼Æ©M="+even+'<br>');
-	   //3-2
-	  	var X = arr.toString()
-	 ¡@  	var X = X.split(",");
-	  	var oddarr = new Array();
-	  	var evenarr = new Array();
+//3-1
+   	var arr=[0,1,2,3,4,5,6,7,8,9];
+   	var odd=0;
+   	var even=0;
+   	for(var i=0;i<arr.length;i++){
+		if(arr[i]%2==0){
+		   even+=arr[i];
+	   	}else{
+		   odd+=arr[i];
+	   	}
+   	}
+	document.write("3-1<br>å¥‡æ•¸å’Œ="+odd+"<br>å¶æ•¸å’Œ="+even+'<br>');
+//3-2
+	var X = arr.toString()
+	var X = X.split(",");
+	var oddarr = new Array();
+	var evenarr = new Array();
 
-		 for(var i=0;i<arr.length;i++){
-			 if(X[i]%2==0){
-				 evenarr=evenarr.concat(X[i]);
-			 }else{
-				 oddarr=oddarr.concat(X[i]);
-			 }
-		 }
-		 ¡@document.write("3-2<br>©_¼Æ­È " + oddarr + "<br>°¸¼Æ­È " + evenarr + '<br>');
-		 //4
-		 var sortarr = [77,5,5,22,13,55,97,4,796,1,0,9];
-		 var temp=0;
-		 for(var j=0;j<sortarr.length-1;j++){
-			 for(var i=0;i<sortarr.length-1;i++){
-				 if(sortarr[i]>sortarr[i+1]){
-					 temp=sortarr[i];
-				 	 sortarr[i]=sortarr[i+1];
-				 	 sortarr[i+1]=temp;
-			 	 }
-		 	 }
-		  }
-		 ¡@document.write("4<br>¥¿§Ç¬°"+sortarr+'<br>');
-		 //5-1
-		 var a = [77,5,5,22,13,55,97,4,796,1,0,9];
-		 var b = [0,1,2,3,4,5,6,7,8,9];
-		 var c = new Array();
-		 var d = new Array();
-		 var e = new Array();
-		 var num_intersect = 0;
-		 for(var i=0;i<a.length;i++){
-			 for(var j=0;j<b.length;j++){
-				 if(a[i]==b[j]){
-					 c[num_intersect]=a[i];
-					 num_intersect++;
-				 }			 
-			 }
-		 }
-		  c = c.my_unique();
-		  c=sortX(c);
-		 ¡@document.write("5-1<br>¥æ¶°¬°"+c+'<br>');
-		 //5-2
-		 var d = a.filter(function(v){ return b.indexOf(v) == -1 })
-		 d=sortX(d);
-		 document.write("5-2<br>®t¶°¬°"+d+'<br>');
-		 //5-3
-		 e=b.concat(d).my_unique();
-		 e=sortX(e);
-		 document.write("5-3<br>Áp¶°¬°"+e+'<br>');
-
+	for(var i=0;i<arr.length;i++){
+		if(X[i]%2==0){
+			evenarr=evenarr.concat(X[i]);
+		}else{
+			oddarr=oddarr.concat(X[i]);
+		}
+	}
+	document.write("3-2<br>å¥‡æ•¸å€¼ " + oddarr + "<br>å¶æ•¸å€¼ " + evenarr + '<br>');
+//4
+	var sortarr = [77,5,5,22,13,55,97,4,796,1,0,9];
+	var temp=0;
+	for(var j=0;j<sortarr.length-1;j++){
+		for(var i=0;i<sortarr.length-1;i++){
+			if(sortarr[i]>sortarr[i+1]){
+				temp=sortarr[i];
+				sortarr[i]=sortarr[i+1];
+				sortarr[i+1]=temp;
+			}
+		}
+	}
+	document.write("4<br>æ­£åºç‚º"+sortarr+'<br>');
+//5-1
+	var a = [77,5,5,22,13,55,97,4,796,1,0,9];
+	var b = [0,1,2,3,4,5,6,7,8,9];
+	var c = new Array();
+	var d = new Array();
+	var e = new Array();
+	var num_intersect = 0;
+	for(var i=0;i<a.length;i++){
+		for(var j=0;j<b.length;j++){
+			if(a[i]==b[j]){
+				c[num_intersect]=a[i];
+				num_intersect++;
+			}			 
+		}
+ 	}
+	c = c.my_unique();
+	c=sortX(c);
+	document.write("5-1<br>äº¤é›†ç‚º"+c+'<br>');
+//5-2
+	var d = a.filter(function(v){ return b.indexOf(v) == -1 })
+	d=sortX(d);
+	document.write("5-2<br>å·®é›†ç‚º"+d+'<br>');
+//5-3
+	e=b.concat(d).my_unique();
+	e=sortX(e);
+	document.write("5-3<br>è¯é›†ç‚º"+e+'<br>');
 });
 
 Array.prototype.my_unique = function() {
-    var a = this.concat();//¨Ï¥Îconcat()¦A½Æ»s¤@¥÷°}¦C¡AÁ×§K¼vÅT­ì°}¦C
+    var a = this.concat();//ä½¿ç”¨concat()å†è¤‡è£½ä¸€ä»½é™£åˆ—ï¼Œé¿å…å½±éŸ¿åŸé™£åˆ—
     for(var i=0; i<a.length; ++i) {
         for(var j=i+1; j<a.length; ++j) {
             if(a[i] === a[j])
                 a.splice(j, 1);
         }
     }
- 
     return a;
 };
 function sortX(sortarr){
-	 var temp=0;
-	 for(var j=0;j<sortarr.length-1;j++){
-		 for(var i=0;i<sortarr.length-1;i++){
-			 if(sortarr[i]>sortarr[i+1]){
-				 temp=sortarr[i];
-			 	 sortarr[i]=sortarr[i+1];
-			 	 sortarr[i+1]=temp;
-		 	 }
-	 	 }
-	  }
+	var temp=0;
+	for(var j=0;j<sortarr.length-1;j++){
+		for(var i=0;i<sortarr.length-1;i++){
+			if(sortarr[i]>sortarr[i+1]){
+				temp=sortarr[i];
+			 	sortarr[i]=sortarr[i+1];
+			 	sortarr[i+1]=temp;
+		 	}
+	 	}
+	 }
 	 return sortarr
 }
-
-
- 
 </script>
 
 
