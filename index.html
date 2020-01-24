@@ -39,13 +39,12 @@ $(document).ready(function () {
 
 		 for(var i=0;i<arr.length;i++){
 			 if(X[i]%2==0){
-				 evenarr[i]=X[i];
+				 evenarr=evenarr.concat(X[i]);
 			 }else{
-				 oddarr[i]=X[i];
+				 oddarr=oddarr.concat(X[i]);
 			 }
 		 }
-		
-		 　document.write("3-2<br>奇數區塊 " + oddarr + "<br>偶數區塊 " + evenarr + '<br>');
+		 　document.write("3-2<br>奇數值 " + oddarr + "<br>偶數值 " + evenarr + '<br>');
 		 //4
 		 var sortarr = [77,5,5,22,13,55,97,4,796,1,0,9];
 		 var temp=0;
@@ -75,15 +74,15 @@ $(document).ready(function () {
 			 }
 		 }
 		  c = c.my_unique();
-		  c=sort(c);
+		  c=sortX(c);
 		 　document.write("5-1<br>交集為"+c+'<br>');
 		 //5-2
 		 var d = a.filter(function(v){ return b.indexOf(v) == -1 })
-		 d=sort(d);
+		 d=sortX(d);
 		 document.write("5-2<br>差集為"+d+'<br>');
 		 //5-3
 		 e=b.concat(d).my_unique();
-		 e=sort(e);
+		 e=sortX(e);
 		 document.write("5-3<br>聯集為"+e+'<br>');
 
 });
@@ -99,7 +98,7 @@ Array.prototype.my_unique = function() {
  
     return a;
 };
-function sort(sortarr){
+function sortX(sortarr){
 	 var temp=0;
 	 for(var j=0;j<sortarr.length-1;j++){
 		 for(var i=0;i<sortarr.length-1;i++){
