@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="BIG5">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	　document.write("第二~五題為使用javascript<br>右鍵檢視網頁原始碼<br><br><br>");
+	//2-1
+	var str="人易科技:上 機 測 驗 - 演算法"
+	document.write("2-1<br>"+str.replace(/[:]/g, "：")+'<br>');
+	//2-2	
+	while(str.search(/([\u4e00-\u9fa5])\s([\u4e00-\u9fa5])/g) > 0){
+		str=str.replace(/([\u4e00-\u9fa5])\s([\u4e00-\u9fa5])/g,"$1$2");
+	}
+	document.write("2-2<br>"+str+'<br>');	
+	//2-3
+	document.write("2-3<br>"+str.substr(0,str.indexOf("-"))+'<br>');
+
+	
+	   //3-1
+	   var arr=[0,1,2,3,4,5,6,7,8,9];
+	   var odd=0;
+	   var even=0;
+	   for(var i=0;i<arr.length;i++){
+		   if(arr[i]%2==0){
+			   even+=arr[i];
+		   }else{
+			   odd+=arr[i];
+		   }
+	   }
+	   document.write("3-1<br>奇數和="+odd+"<br>偶數和="+even+'<br>');
+	   //3-2
+	  	var X = arr.toString()
+	 　  	var X = X.split(",");
+	  	var oddarr = new Array();
+	  	var evenarr = new Array();
+
+		 for(var i=0;i<arr.length;i++){
+			 if(X[i]%2==0){
+				 evenarr[i]=X[i];
+			 }else{
+				 oddarr[i]=X[i];
+			 }
+		 }
+		
+		 　document.write("3-2<br>奇數區塊 " + oddarr + "<br>偶數區塊 " + evenarr + '<br>');
+		 //4
+		 var sortarr = [77,5,5,22,13,55,97,4,796,1,0,9];
+		 var temp=0;
+		 for(var j=0;j<sortarr.length-1;j++){
+			 for(var i=0;i<sortarr.length-1;i++){
+				 if(sortarr[i]>sortarr[i+1]){
+					 temp=sortarr[i];
+				 	 sortarr[i]=sortarr[i+1];
+				 	 sortarr[i+1]=temp;
+			 	 }
+		 	 }
+		  }
+		 　document.write("4<br>正序為"+sortarr+'<br>');
+		 //5-1
+		 var a = [77,5,5,22,13,55,97,4,796,1,0,9];
+		 var b = [0,1,2,3,4,5,6,7,8,9];
+		 var c = new Array();
+		 var d = new Array();
+		 var e = new Array();
+		 var num_intersect = 0;
+		 for(var i=0;i<a.length;i++){
+			 for(var j=0;j<b.length;j++){
+				 if(a[i]==b[j]){
+					 c[num_intersect]=a[i];
+					 num_intersect++;
+				 }			 
+			 }
+		 }
+		  c = c.my_unique();
+		  c=sort(c);
+		 　document.write("5-1<br>交集為"+c+'<br>');
+		 //5-2
+		 var d = a.filter(function(v){ return b.indexOf(v) == -1 })
+		 d=sort(d);
+		 document.write("5-2<br>差集為"+d+'<br>');
+		 //5-3
+		 e=b.concat(d).my_unique();
+		 e=sort(e);
+		 document.write("5-3<br>聯集為"+e+'<br>');
+
+});
+
+Array.prototype.my_unique = function() {
+    var a = this.concat();//使用concat()再複製一份陣列，避免影響原陣列
+    for(var i=0; i<a.length; ++i) {
+        for(var j=i+1; j<a.length; ++j) {
+            if(a[i] === a[j])
+                a.splice(j, 1);
+        }
+    }
+ 
+    return a;
+};
+function sort(sortarr){
+	 var temp=0;
+	 for(var j=0;j<sortarr.length-1;j++){
+		 for(var i=0;i<sortarr.length-1;i++){
+			 if(sortarr[i]>sortarr[i+1]){
+				 temp=sortarr[i];
+			 	 sortarr[i]=sortarr[i+1];
+			 	 sortarr[i+1]=temp;
+		 	 }
+	 	 }
+	  }
+	 return sortarr
+}
+
+
+ 
+</script>
+
+
+</head>
+<body>
+	
+</body>
+</html>
